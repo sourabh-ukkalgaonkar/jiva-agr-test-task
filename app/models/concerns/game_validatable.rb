@@ -18,13 +18,13 @@ module GameValidatable
     def valid_total_ships
       return if total_ships.is_a?(Numeric) && total_ships.positive? && total_ships <= max_total_ships
 
-      errors.add(:total_ships, "must be a number between 0 and #{max_total_ships}")
+      errors.add(:total_ships, "must be a number between 1 and #{max_total_ships}")
     end
 
     def valid_total_missiles
-      return if total_missiles.is_a?(Numeric) && total_missiles.positive? && total_missiles <= grid_size
+      return if total_missiles.is_a?(Numeric) && total_missiles.positive? && total_missiles <= max_total_ships
 
-      errors.add(:grid_size, "must be a number between 0 and #{max_total_ships}")
+      errors.add(:total_missiles, "must be a number between 1 and #{max_total_ships}")
     end
 
     def max_total_ships

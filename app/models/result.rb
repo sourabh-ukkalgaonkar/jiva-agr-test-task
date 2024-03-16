@@ -24,16 +24,16 @@ class Result
     matrix
   end
 
+  # Always gives results based on the player1 with respec to player2 
   def conclusion(player1, player2)
-    ships_destroyed_by_player1 = player1.ships_destroyed(player2)
-    ships_destroyed_by_player2 = player2.ships_destroyed(player1)
-
-    if ships_destroyed_by_player1.count > ships_destroyed_by_player2.count
-      'Player 1 Wins'
-    elsif ships_destroyed_by_player2.count > ships_destroyed_by_player1.count
+    ships_destroyed_of_player1 = player1.ships_destroyed(player2)
+    ships_destroyed_of_player2 = player2.ships_destroyed(player1)
+    if ships_destroyed_of_player1.count > ships_destroyed_of_player2.count
       'Player 2 Wins'
+    elsif ships_destroyed_of_player2.count > ships_destroyed_of_player1.count
+      'Player 1 Wins'
     else
-      "It's Draw "
+      "It's Draw"
     end
   end
 end

@@ -6,6 +6,11 @@
   </turbo-stream>
 <% else %>
   <% result = Result.new(@game.grid_size) %>
+  <turbo-stream action="update" target="error">
+    <template>
+      <%= render partial: 'error' %>
+    </template>
+  </turbo-stream>
   <turbo-stream action="update" target="result">
     <template>
       <%= render partial: 'result', locals: { id: 1, matrix: result.detailed_matrix(@game.player1, @game.player2) } %>
