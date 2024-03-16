@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :games, only: :new do 
+    collection do
+      post :result
+    end
+  end 
+  root 'games#new'
 end

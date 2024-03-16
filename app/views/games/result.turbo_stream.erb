@@ -1,0 +1,16 @@
+<% unless @game.valid? %>
+  <turbo-stream action="update" target="error">
+    <template>
+      <%= render partial: 'error' %>
+    </template>
+  </turbo-stream>
+<% else %>
+  <% result = Result.new(@game.grid_size) %>
+  <turbo-stream action="update" target="result">
+    <template>
+      <%= render partial: 'result', locals: { id: 1, matrix: result.detailed_matrix(@game.player1, @game.player2) } %>
+      <%= render partial: 'result', locals: { id: 2, matrix: result.detailed_matrix(@game.player2, @game.player1) } %>
+      <%= render partial: 'result_details', locals: { result: result.conclusion(@game.player1, @game.player2), player1: @game.player1, player2: @game.player2 } %>
+    </template>
+  </turbo-stream>
+<% end %>

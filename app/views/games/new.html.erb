@@ -1,0 +1,48 @@
+<div id="game-input">
+  <h1> Game of BattleShips </h1>
+  <turbo-frame id="error"></turbo-frame>
+  <%= form_tag(result_games_path, remote: true) do %>
+    <div class="input-div">
+      <span class="label">Grid Size</span>
+      <%= number_field_tag 'game[grid_size]', nil, required: true, placeholder: 'Size of the battleground [M*M]', max: 10, min: 1 %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">Total Ships</span>
+      <%= number_field_tag 'game[total_ships]', nil, required: true, placeholder: 'Number of ships which can be placed on [M*M]',max: 50, min: 1 %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">P1 Ship Positions</span>
+      <%= text_field_tag 'game[p1_ships_positions]', nil, required: true, placeholder: 'Ship Positions: 1,1:2,0,.. (x,y pairs separated by colon)' %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">P2 Ship Positions</span>
+      <%= text_field_tag 'game[p2_ships_positions]', nil, required: true, placeholder: 'Ship Positions: 1,1:2,0,.. (x,y pairs separated by colon)' %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">Total Missiles</span>
+      <%= number_field_tag 'game[total_missiles]', nil, required: true, placeholder: 'Total number of missiles players have', max: 99, min: 1 %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">P1 Moves</span>
+      <%= text_field_tag 'game[p1_move_positions]', nil, required: true, placeholder: 'Missile Positions: 1,1:2,0,.. (x,y pairs separated by colon)' %>
+    </div>
+
+    <div class="input-div">
+      <span class="label">P2 Move</span>
+      <%= text_field_tag 'game[p2_move_positions]', nil, required: true, placeholder: 'Missile Positions: 1,1:2,0,.. (x,y pairs separated by colon)' %>
+    </div>
+
+    <div class="submit-div">
+      <%= submit_tag 'Submit', class: 'submit' %>
+      <%= link_to 'Reset', root_path, class: 'submit' %>
+    </div>  
+  <% end %>
+  <turbo-frame id="result"></turbo-frame>
+</div>
+
+

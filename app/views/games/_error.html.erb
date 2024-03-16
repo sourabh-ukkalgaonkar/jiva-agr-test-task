@@ -1,0 +1,6 @@
+<% if @game.errors.any? %>
+  <h2>Errors</h2>
+  <% @game.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>

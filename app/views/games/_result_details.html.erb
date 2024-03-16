@@ -1,0 +1,24 @@
+<div id='result-details'>
+  <h1>Result Details</h1>
+  <div class="input-div">
+    <span class="label">Ship Destroyed of Player 1</span><%= player1.ships_destroyed(player2).count %><span class="label position">Positions</span> <%= player1.ships_destroyed(player2)  %>
+  </div>
+  <div class="input-div">
+    <span class="label">Ship Destroyed of Player 2</span> <%= player2.ships_destroyed(player1).count %><span class="label position">Positions</span><%= player2.ships_destroyed(player1) %>
+  </div>
+  <div class="input-div">
+    <span class="label">Missile Missed of Player 1</span> <%= player2.missile_missed(player1).count %><span class="label position">Positions</span><%= player2.missile_missed(player1) %>
+  </div>
+    <div class="input-div">
+    <span class="label">Missile Missed of Player 2</span> <%= player1.missile_missed(player2).count %><span class="label position">Positions</span><%= player1.missile_missed(player2) %>
+  </div>
+  <div class="input-div">
+    <span class="label">Alived Ship of Player 1</span> <%= player1.alived_ships_of(player2).count %><span class="label position">Positions</span><%= player1.alived_ships_of(player2) %>
+  </div>
+  <div class="input-div">
+    <span class="label">Alived Ship of Player 2</span> <%= player2.alived_ships_of(player1).count %><span class="label position">Positions</span><%= player2.alived_ships_of(player1) %>
+  </div>
+  <div class="input-div">
+    <span class="label">Result</span> <%= result %>
+  </div>
+</div>

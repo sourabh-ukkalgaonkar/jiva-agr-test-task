@@ -1,0 +1,16 @@
+<div class="player">
+  <h1> Player <%= id %> </h1>
+  <% matrix.each_with_index do |row, i| %>
+    <li>
+      <ol> 
+        <% matrix.each_with_index do |column, j| %>
+          <li>
+            <span>
+              <%= matrix[i][j] %>
+            </span>
+          </li>
+        <% end %>
+      </ol>
+    </li>
+  <% end %>
+</div> 
