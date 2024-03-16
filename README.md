@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This documentation will help developer to setup the application on their local env.
 
-Things you may want to cover:
+## Application Setup
 
-* Ruby version
+* Run Bundle Install
 
-* System dependencies
+```sh
+	bundle install
+```
 
-* Configuration
+* Run Yarn Install
 
-* Database creation
+```sh
+	yarn install
+```
 
-* Database initialization
+* Start Rails Server
 
-* How to run the test suite
+```sh
+	rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## UI Sample
 
-* Deployment instructions
-
-* ...
+![](https://github.com/sourabh-ukkalgaonkar/jiva-agr-test-task/blob/main/BattleshipGame.gif)
